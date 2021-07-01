@@ -13,8 +13,8 @@ Just send the voice message to this bot, and it will give you a half arsed trans
 3. Setup a telegram bot and acquire that token
 4. clone this project
 5. install poetry and pyenv
-6. ´poetry install´
-7. ´poetry run tldlbot´
+6. `poetry install`
+7. `poetry run tldlbot`
 8. Fix some errors that occur because of hardcoded paths or whatever
 9. enjoy
 
