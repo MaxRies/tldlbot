@@ -37,7 +37,7 @@ def transcribe_message(update: Update, context):
     update.message.reply_text("Alright, habe deine Nachricht bekommen. Höre zu... das dauert vielleicht ein bisschen!")
     update.message.reply_chat_action(CHATACTION_TYPING)
     
-    voice_file = update.message.voice.get_file().download()
+    voice_file = update.message.voice.get_file().download(custom_path="/home/pi/telegrambots/tldlbot/voicemsgs/current_msg.ogg")
     logging.info(voice_file)
     with open(voice_file, 'rb') as audio_file:
         results = STT.recognize(
@@ -50,6 +50,7 @@ def transcribe_message(update: Update, context):
 
 
 def main():
+    global STT
     updater = Updater(telegram_secrets["token"])
 
     STT = setup_transcription()
